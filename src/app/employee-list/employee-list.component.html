@@ -1,0 +1,25 @@
+<h1 style="text-align: center"><b>DAFTAR NASABAH</b></h1>
+<a routerLink="create-employee" routerLinkActive="active">
+    <button type="button" class="btn btn-primary">TAMBAH NASABAH</button>
+</a>
+<br><br>
+<table border="3" id="customers">
+    <tr>
+        <th style="text-align: center">AKSI</th>
+        <th style="text-align: center">ID</th>
+        <th style="text-align: center">NAMA</th>
+        <th style="text-align: center">ALAMAT</th>
+        <th style="text-align: center">EMAIL</th>
+    </tr>
+    <tr *ngFor = "let employee of employees">
+        <td style="text-align: center">
+            <button (click) = "updateEmployee(employee.id)" class="btn btn-primary">UBAH</button>
+            &nbsp;
+            <button (click) = "deleteEmployee(employee.id)" class="btn btn-danger">Hapus</button>
+        </td>
+        <td style="text-align: center">{{employee.id}}</td>
+        <td style="text-align: center">{{employee.firstName}}</td>
+        <td style="text-align: center">{{employee.lastName}}</td>
+        <td style="text-align: center">{{employee.emailId}}</td>
+    </tr>
+</table>
